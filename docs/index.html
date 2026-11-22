@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小智 AI 玩具 — 制作日志</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --dim: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --orange: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+        .subtitle {
+            color: var(--dim);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .hero {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero p { color: var(--dim); font-size: 0.9rem; }
+        .week {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+        }
+        .week:hover { border-color: var(--accent); }
+        .week h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .week p { color: var(--dim); font-size: 0.85rem; }
+        .badge {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .done { background: rgba(63,185,80,0.15); color: var(--green); }
+        .current { background: rgba(210,153,34,0.15); color: var(--orange); }
+        .upcoming { background: rgba(139,148,158,0.1); color: var(--dim); }
+        .tags { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(88,166,255,0.1);
+            color: var(--accent);
+        }
+        footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--dim);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>小智 AI 玩具</h1>
+    <p class="subtitle">基于 MIT MAS.863 的 12 周自学项目 · ESP32-S3 + Xiaozhi 生态</p>
+
+    <div class="hero">
+        <p>一个会说话、会转头、有表情的 AI 伴侣玩具。从 CAD 建模到 PCB 设计，从固件开发到自建语音服务器，记录每一周的制作过程。</p>
+    </div>
+
+    <div class="week" id="week1">
+        <h3>Week 1：CAD 参数化建模 <span class="badge current">进行中</span></h3>
+        <p>用 Fusion 360 设计参数化外壳（上下盖、螺丝柱、预留开孔），导出 STL 并在 PrusaSlicer 中预览。</p>
+        <div class="tags">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">PrusaSlicer</span>
+            <span class="tag">Git</span>
+        </div>
+    </div>
+
+    <div class="week" id="week2">
+        <h3>Week 2：电路设计 + PCB <span class="badge upcoming">待开始</span></h3>
+        <p>在 KiCad 中画 ESP32-S3 整合板原理图和 PCB，导出 Gerber 在 JLCPCB 下单。</p>
+        <div class="tags">
+            <span class="tag">KiCad</span>
+            <span class="tag">JLCPCB</span>
+        </div>
+    </div>
+
+    <div class="week" id="week3">
+        <h3>Week 3：刷固件跑通语音 <span class="badge upcoming">待开始</span></h3>
+        <p>面包板接线，刷小智固件，配网绑定，实现语音对话。</p>
+        <div class="tags">
+            <span class="tag">ESP32-S3</span>
+            <span class="tag">Xiaozhi</span>
+            <span class="tag">I2S</span>
+        </div>
+    </div>
+
+    <div class="week" id="week4">
+        <h3>Week 4：眼睛 + 唤醒词 <span class="badge upcoming">待开始</span></h3>
+        <p>接 ST7735 TFT 做表情眼睛，自定义唤醒词，探索源码架构。</p>
+        <div class="tags">
+            <span class="tag">ST7735</span>
+            <span class="tag">ESP-SR</span>
+            <span class="tag">Edge Impulse</span>
+        </div>
+    </div>
+
+    <div class="week" id="week5">
+        <h3>Week 5：3D 打印外壳 <span class="badge upcoming">待开始</span></h3>
+        <p>打印外壳，试装电路，测量误差迭代修改。</p>
+        <div class="tags">
+            <span class="tag">3D 打印</span>
+            <span class="tag">PrusaSlicer</span>
+        </div>
+    </div>
+
+    <div class="week" id="week6">
+        <h3>Week 6：舵机 + 灯效 <span class="badge upcoming">待开始</span></h3>
+        <p>SG90 舵机做头部运动，WS2812B 情绪灯效，联动语音。</p>
+        <div class="tags">
+            <span class="tag">SG90</span>
+            <span class="tag">WS2812B</span>
+            <span class="tag">Arduino</span>
+        </div>
+    </div>
+
+    <div class="week" id="week7">
+        <h3>Week 7：激光切割 <span class="badge upcoming">待开始</span></h3>
+        <p>设计压装结构，去 MakerNexus 激光切割。</p>
+        <div class="tags">
+            <span class="tag">Inkscape</span>
+            <span class="tag">MakerNexus</span>
+        </div>
+    </div>
+
+    <div class="week" id="week8">
+        <h3>Week 8：模具与浇铸 <span class="badge upcoming">待开始</span></h3>
+        <p>3D 打印模具，硅胶翻模浇铸软质零件。</p>
+        <div class="tags">
+            <span class="tag">Smooth-On</span>
+            <span class="tag">Fusion 360</span>
+        </div>
+    </div>
+
+    <div class="week" id="week9">
+        <h3>Week 9：自建 AI 服务器 <span class="badge upcoming">待开始</span></h3>
+        <p>Python 后端：Whisper STT + Claude API + TTS，替代小智云。</p>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">WebSocket</span>
+            <span class="tag">Claude API</span>
+        </div>
+    </div>
+
+    <div class="week" id="week10">
+        <h3>Week 10：Web 控制台 <span class="badge upcoming">待开始</span></h3>
+        <p>实时 Web 控制台：音量波形、对话历史、舵机滑块、灯效切换。</p>
+        <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">WebSocket</span>
+        </div>
+    </div>
+
+    <div class="week" id="week11">
+        <h3>Week 11：系统集成 <span class="badge upcoming">待开始</span></h3>
+        <p>焊接 PCB，装壳，全模块联调测试。</p>
+        <div class="tags">
+            <span class="tag">集成测试</span>
+        </div>
+    </div>
+
+    <div class="week" id="week12">
+        <h3>Week 12：文档与展示 <span class="badge upcoming">待开始</span></h3>
+        <p>演示视频，完整项目文档，可复现的 README。</p>
+        <div class="tags">
+            <span class="tag">文档</span>
+            <span class="tag">视频</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wendy Yun · 2026 · <a href="https://github.com/zyziyun/xiaozhi-toy">GitHub</a></p>
+    </footer>
+</body>
+</html>
